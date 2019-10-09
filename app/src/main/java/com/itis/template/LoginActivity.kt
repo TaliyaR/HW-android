@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
     fun onClickLogin(view: View){
         val logIntent = Intent(this, MainActivity::class.java)
         if(et_sign_in_pass.text.toString() == PasswordRepository.password){
+            progressBar.visibility = View.VISIBLE
             startActivity(logIntent)
         }
         else{
@@ -37,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun onClickChange(view: View){
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, ChangePasswordActivity::class.java)
         startActivity(intent)
     }
 

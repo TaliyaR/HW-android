@@ -8,24 +8,25 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/ti_sign_in_login"
-        android:layout_margin="1dp"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
+        android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/leaves" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_sign_in_login"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/imageView">
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_sign_in_login"
@@ -40,7 +41,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ti_sign_in_login"
@@ -50,34 +51,36 @@
             android:id="@+id/et_sign_in_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+
+    <Button
         android:id="@+id/login_button"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="548dp"
-        android:text="@string/button_login"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="13sp"
+        android:background="@color/colorPrimary"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:onClick="onClickLogin"
+        android:text="@string/button_login"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
-
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/password_button"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="10dp"
         android:text="@string/button_chg_password"
-        android:textColor="@color/cardview_dark_background"
         android:textSize="13sp"
         android:onClick="onClickChange"
         app:layout_constraintTop_toBottomOf="@id/login_button"
@@ -88,13 +91,13 @@
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ti_sign_in_pass"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/login_button"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_sign_in_pass"/>
 
 
 </android.support.constraint.ConstraintLayout>
