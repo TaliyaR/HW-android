@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Template</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="button_chg_password">CHANGE PASSWORD</string>
+    <string name="button_login">LOGIN</string>
+    <string name="validate_password">Wrong password! Please try again</string>
+    <string name="new_password">New password</string>
 </resources>
