@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="slide_anim_duration_enter">800</integer>
+    <integer name="slide_anim_duration_exit">800</integer>
+    <integer name="fade_anim_duration">800</integer>
+    <integer name="slide_down_duration">800</integer>
+    <integer name="slide_transition_duration">800</integer>
+
+</resources>

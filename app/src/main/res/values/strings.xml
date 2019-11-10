@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Template</string>
+    <string name="nav_header_title">John Doe</string>
+    <string name="menu_today">Сегодня</string>
+    <string name="menu_week">Неделя</string>
+    <string name="menu_report">Отчет</string>
+    <string name="menu_goals">Мои цели</string>
+    <string name="new_goal">Новая цель</string>
+    <string name="desc_goal">Цель</string>
+
+    <string name="fr_today">Это фрагмент Сегодня</string>
+    <string name="fr_week">Это фрагмент Неделя</string>
+    <string name="fr_report">Это фрагмент Отчет</string>
+    <string name="fr_goals">Это фрагмент Мои цели</string>
+
+    <string name="goal">Цель</string>
+    <string name="description">Описание</string>
+    <string name="plan">План</string>
+    <string name="btn_next">Создать новую цель</string>
+    <string name="btn_save">Сохранить</string>
 </resources>

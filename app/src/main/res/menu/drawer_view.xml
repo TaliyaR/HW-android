@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_today"
+            android:icon="@drawable/ic_menu_today"
+            android:title="@string/menu_today" />
+        <item
+            android:id="@+id/nav_week"
+            android:icon="@drawable/ic_menu_week"
+            android:title="@string/menu_week" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_menu_report"
+            android:title="@string/menu_report" />
+        <item
+            android:id="@+id/nav_goals"
+            android:icon="@drawable/ic_menu_goals"
+            android:title="@string/menu_goals" />
+    </group>
+</menu>
