@@ -13,16 +13,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         adapter = LandmarkAdapter(getDataSource()) { Landmark ->
-            navigateToDetailsActivity(
-                    Landmark.name, Landmark.description, Landmark.image)
+            navigateToDetailsActivity(Landmark)
         }
         rv_landmarks.adapter = adapter
     }
 
-    private fun navigateToDetailsActivity(name: String, description: String, image: Int) {
-        startActivity(DetailsActivity.createIntent(this, name, description, image))
+    private fun navigateToDetailsActivity(landmark: Landmark) {
+        startActivity(DetailsActivity.createIntent(
+                this, landmark.name, landmark.description, landmark.image))
     }
-
 
     private fun getDataSource(): List<Landmark> = arrayListOf(
             Landmark("Эйфелева башня", "Металлическая башня в центре Парижа", R.drawable.eiffel_tower),
