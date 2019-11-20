@@ -1,10 +1,10 @@
-package com.itis.template
+package com.itis.template.food
 
 import androidx.recyclerview.widget.DiffUtil
 
-class BookDiffUtilCallBack(
-        private val oldList: List<Book>,
-        private val newList: List<Book>
+class FoodDiffUtilCallBack(
+        private val oldList: List<Food>,
+        private val newList: List<Food>
 ) : DiffUtil.Callback() {
 
     override fun getOldListSize() = oldList.size

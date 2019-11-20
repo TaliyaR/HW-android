@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
-import com.itis.template.Book
 import com.itis.template.R
+import com.itis.template.book.Book
 import kotlinx.android.synthetic.main.fragment_add_dialog.*
 import kotlinx.android.synthetic.main.fragment_add_dialog.view.*
 

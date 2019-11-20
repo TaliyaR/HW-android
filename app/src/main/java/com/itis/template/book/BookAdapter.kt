@@ -1,4 +1,4 @@
-package com.itis.template
+package com.itis.template.book
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil

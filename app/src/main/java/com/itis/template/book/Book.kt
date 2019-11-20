@@ -1,4 +1,4 @@
-package com.itis.template
+package com.itis.template.book
 
 data class Book(
         var title: String,

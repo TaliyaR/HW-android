@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.itis.template.Book
-import com.itis.template.BookAdapter
 import com.itis.template.R
+import com.itis.template.book.Book
+import com.itis.template.book.BookAdapter
 import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListsFragment : Fragment() {
