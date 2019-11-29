@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Template</string>
+    <string name="title">Заголовок</string>
+    <string name="description">Описание</string>
+    <string name="position">Позиция</string>
+    <string name="add">Добавить</string>
+    <string name="cancel">Закрыть</string>
+    <string name="ok">Добавить</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
