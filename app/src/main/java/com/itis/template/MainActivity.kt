@@ -59,13 +59,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToFragment(fragmentToNavigate: Fragment): Boolean {
-        supportFragmentManager.also {
-            it.beginTransaction().apply {
-                replace(R.id.frameLayout, fragmentToNavigate)
-                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                addToBackStack(null)
-                commit()
-            }
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.frameLayout, fragmentToNavigate)
+            setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            addToBackStack(null)
+            commit()
         }
         return true
     }

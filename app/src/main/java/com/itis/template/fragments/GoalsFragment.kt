@@ -24,20 +24,17 @@ class GoalsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btn_next.setOnClickListener {
-            fragmentManager.also {
-                it?.beginTransaction()?.apply {
-                    setCustomAnimations(
-                            R.anim.fade_in,
-                            R.anim.fade_out,
-                            R.anim.enter_from_top,
-                            R.anim.exit_to_bottom
-                    )
-                    replace(R.id.frameLayout, NewGoalFragment.newInstance())
-                    addToBackStack(null)
-                    commit()
-                }
+            fragmentManager?.beginTransaction()?.apply {
+                setCustomAnimations(
+                        R.anim.fade_in,
+                        R.anim.fade_out,
+                        R.anim.enter_from_top,
+                        R.anim.exit_to_bottom
+                )
+                replace(R.id.frameLayout, NewGoalFragment.newInstance())
+                addToBackStack(null)
+                commit()
             }
         }
     }
-
 }

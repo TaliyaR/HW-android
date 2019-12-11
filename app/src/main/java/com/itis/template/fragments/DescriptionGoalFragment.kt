@@ -15,13 +15,13 @@ class DescriptionGoalFragment : Fragment() {
 
     companion object {
 
-        private const val GOAL = "goal"
-        private const val DESCRIPTION = "description"
-        private const val PLAN = "plan"
+        private const val GOAL = "ARG_GOAL"
+        private const val DESCRIPTION = "ARG_DESCRIPTION"
+        private const val PLAN = "ARG_PLAN"
 
         fun newInstance(goal: String, description: String, plan: String
-        ): DescriptionGoalFragment = DescriptionGoalFragment().also {
-            it.arguments = Bundle().apply {
+        ): DescriptionGoalFragment = DescriptionGoalFragment().apply {
+            arguments = Bundle().apply {
                 putString(GOAL, goal)
                 putString(DESCRIPTION, description)
                 putString(PLAN, plan)
@@ -37,8 +37,8 @@ class DescriptionGoalFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv_goal.text = arguments?.getString(GOAL)
-        tv_description.text = arguments?.getString(DESCRIPTION)
-        tv_plan.text = arguments?.getString(PLAN)
+        tv_goal.text = arguments?.getString(GOAL) ?: ""
+        tv_description.text = arguments?.getString(DESCRIPTION) ?: ""
+        tv_plan.text = arguments?.getString(PLAN) ?: ""
     }
 }
