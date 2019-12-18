@@ -17,8 +17,6 @@ class SongsHolder(override val containerView: View,
             tv_artist.text = song.artist
             iv_cover.setImageResource(song.cover)
 
-
-
             itemView.setOnClickListener {
                 clickLambda(song)
             }

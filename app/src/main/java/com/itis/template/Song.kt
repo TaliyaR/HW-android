@@ -8,5 +8,5 @@ data class Song(
         val artist: String,
         val album: String,
         @DrawableRes val cover: Int,
-        @RawRes val file: Int //TODO возможно неверный тип уточнить
+        @RawRes val file: Int
 )

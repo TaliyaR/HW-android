@@ -14,6 +14,10 @@ object SongRepository {
     private val maxIndex = songsList.size - 1
     private var currentItemIndex = 0
 
+    fun setCurrentIndex(song: Song) {
+        currentItemIndex = songsList.indexOf(song)
+    }
+
     fun getList() = songsList
 
     fun getNext(): Song {
