@@ -22,15 +22,14 @@ import java.util.*
 class EditToDoFragment : Fragment(), CoroutineScope by MainScope() {
 
     private lateinit var db: AppDatabase
-    private lateinit var dbHelper: DbHelper
     private var taskUpd: Task? = null
     private lateinit var act: Context
     private lateinit var date: Date
 
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         db = AppDatabase(context)
-        dbHelper = DbHelper(context)
         act = context
     }
 
@@ -50,7 +49,7 @@ class EditToDoFragment : Fragment(), CoroutineScope by MainScope() {
 
         date_btn.setOnClickListener {
             val dpd = DatePickerDialog(act, DatePickerDialog.OnDateSetListener { _, mYear, mMonth, mDay ->
-                date = Date(mYear, mMonth, mDay)
+                c.set(mYear, mMonth, mDay)
             }, year, month, day)
             dpd.show()
         }
@@ -58,7 +57,7 @@ class EditToDoFragment : Fragment(), CoroutineScope by MainScope() {
             if (taskUpd == null) {
                 val title = et_title.text.toString()
                 val description = et_description.text.toString()
-                val date = date
+                val date = c.time
                 val latitude = (activity as MainActivity).latitude
                 val longitude = (activity as MainActivity).longitude
                 launch { db.taskDAO().insert(Task(null, title, description, date, longitude, latitude)) }
