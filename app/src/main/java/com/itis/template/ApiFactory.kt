@@ -41,8 +41,6 @@ object ApiFactory {
             .addInterceptor(unitsInterceptor)
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .addInterceptor(authInterceptor)
-            .addInterceptor(languageInterceptor)
-
             .build()
     }
     private val retrofit: Retrofit by lazy {

@@ -26,13 +26,11 @@ import kotlinx.coroutines.*
 class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     private lateinit var service: WeatherService
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var adapter: WeatherItemAdapter
     private lateinit var citiesList: List<WeatherResponse>
     lateinit var mFusedLocationClient: FusedLocationProviderClient
-    var latitude: Double = 0.0
-    var longitude: Double = 0.0
-    val TAG = "WEATHER"
+    var latitude: Double = 55.75
+    var longitude: Double = 37.62
     private val PERMISSION_ID = 42
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,12 +39,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         service = ApiFactory.weatherService
-//        responseInCycle(55.75, 37.62, 10)
-
-        launch {
-            getLastLocation()
-            responseInCycle(latitude, longitude, 10)
-        }
+        getLastLocation()
 
     }
 
@@ -155,8 +148,8 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         )
     }
 
-    //    @SuppressLint("MissingPermission")
-    private suspend fun getLastLocation() {
+    @SuppressLint("MissingPermission")
+    private fun getLastLocation() {
         if (checkPermissions()) {
             if (isLocationEnabled()) {
                 mFusedLocationClient.lastLocation.addOnCompleteListener(this) { task ->
@@ -166,6 +159,9 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                     } else {
                         latitude = location.latitude
                         longitude = location.longitude
+                        launch {
+                            responseInCycle(latitude, longitude, 10)
+                        }
                     }
                 }
             } else {

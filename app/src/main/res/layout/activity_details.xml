@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/iv_weather"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,14 +47,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_main">
 
+        <ImageView
+            android:id="@+id/iv_wind"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_wind"
+            app:layout_constraintEnd_toStartOf="@id/iv_humidity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_windText"
             app:layout_constraintEnd_toStartOf="@id/tv_humidity"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_wind" />
+
+        <TextView
+            android:id="@+id/tv_windText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_humidityText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_wind" />
+
+        <ImageView
+            android:id="@+id/iv_humidity"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_humidity"
+            app:layout_constraintEnd_toStartOf="@id/iv_clouds"
+            app:layout_constraintStart_toEndOf="@id/iv_wind"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -61,9 +92,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_humidityText"
             app:layout_constraintEnd_toStartOf="@id/tv_clouds"
             app:layout_constraintStart_toEndOf="@id/tv_wind"
+            app:layout_constraintTop_toBottomOf="@id/iv_humidity" />
+
+        <TextView
+            android:id="@+id/tv_humidityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/humidity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_cloudsText"
+            app:layout_constraintStart_toEndOf="@id/tv_windText"
+            app:layout_constraintTop_toBottomOf="@id/tv_humidity" />
+
+        <ImageView
+            android:id="@+id/iv_clouds"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_clouds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_humidity"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -71,10 +122,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_cloudsText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_humidity"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/iv_clouds" />
+
+        <TextView
+            android:id="@+id/tv_cloudsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clouds"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_humidityText"
+            app:layout_constraintTop_toBottomOf="@id/tv_clouds" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
